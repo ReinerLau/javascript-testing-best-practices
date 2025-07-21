@@ -1042,7 +1042,7 @@ test('When flagging to show only VIP, should display only VIP members', () => {
 
 ## ⚪ ️ 3.2 使用不太容易改变的属性去查询 HTML 元素
 
-:white_check_mark: **建议:**通过不太同意受图形变更印象的属性查询 HTML 元素（例如 form label，而不是 CSS selector）。如果指定的元素没有这样的属性，则创建一个专用的测试属性，如“test-id-submit-button”。这样做不仅可以确保您的功能/逻辑测试不会因为外观变化而中断，而且整个团队可以清楚地看到，测试使用了这个元素和属性，不应该删除它。
+:white_check_mark: **建议:** 通过不太同意受图形变更印象的属性查询 HTML 元素（例如 form label，而不是 CSS selector）。如果指定的元素没有这样的属性，则创建一个专用的测试属性，如“test-id-submit-button”。这样做不仅可以确保您的功能/逻辑测试不会因为外观变化而中断，而且整个团队可以清楚地看到，测试使用了这个元素和属性，不应该删除它。
 
 <br/>
 
