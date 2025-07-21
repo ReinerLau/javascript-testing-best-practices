@@ -1185,7 +1185,7 @@ test('Shallow/mocked approach: When clicked to show filters, filters are display
 
 ## ⚪ ️ 3.4 不要 sleep，使用框架内置的对 async 事件的支持。并且尝试提效。
 
-:white_check_mark: **建议:** 在许多情况下，被测试单元的完成时间是未知的 (例如，animation 挂起了元素表现 )——在这种情况下，不要 sleep (例如setTimeout)，并是使用大多数框架提供的更靠谱的方法。一些库允许等待操作 (例如 [Cypress .request('url')](https://docs.cypress.io/guides/references/best-practices.html#Unnecessary-Waiting))，另一些库提供用于等待的 API，如 [@testing-library/dom 方法 wait(expect(element))](https://testing-library.com/docs/guide-disappearance)。有时一种更优雅的方法是 stub 慢的资源，比如API，然后一旦响应时间变得确定，组件就可以显式地重新渲染。当依赖一些 sleep 的外部组件时，[加快时钟](https://jestjs.io/docs/en/timer-mocks)可能会提供帮助。sleep 是一种需要避免的模式，因为它会迫使您的测试变得缓慢或有风险(当等待的时间太短时)。当 sleep 和轮询不可避免且测试框架原生不支持时，一些npm库 (如 [wait-for-expect](https://www.npmjs.com/package/wait-for-expect)) 可以帮助解决半确定性问题。
+:white_check_mark: **建议:** 在许多情况下，被测试单元的完成时间是未知的 (例如，animation 挂起了元素表现 )——在这种情况下，不要 sleep (例如setTimeout)，而是使用大多数框架提供的更靠谱的方法。一些库允许等待操作 (例如 [Cypress .request('url')](https://docs.cypress.io/guides/references/best-practices.html#Unnecessary-Waiting))，另一些库提供用于等待的 API，如 [@testing-library/dom 方法 wait(expect(element))](https://testing-library.com/docs/guide-disappearance)。有时一种更优雅的方法是 stub 慢的资源，比如API，然后一旦响应时间变得确定，组件就可以显式地重新渲染。当依赖一些 sleep 的外部组件时，[加快时钟](https://jestjs.io/docs/en/timer-mocks)可能会提供帮助。sleep 是一种需要避免的模式，因为它会迫使您的测试变得缓慢或有风险(当等待的时间太短时)。当 sleep 和轮询不可避免且测试框架原生不支持时，一些npm库 (如 [wait-for-expect](https://www.npmjs.com/package/wait-for-expect)) 可以帮助解决半确定性问题。
 <br/>
 
 ❌ **否则:** 当 sleep 时间长时，测试速度会慢一个数量级。当尝试缩短 sleep 时间时，如果被测试的单元没有及时响应，则测试将失败。这时你不得不在脆弱的测试和糟糕的性能之间进行权衡。
